@@ -5,7 +5,7 @@ from food import Food
 from scoreboard import Scoreboard
 
 screen = Screen()
-screen.setup(600,600)
+screen.setup(600, 600)
 screen.bgcolor("black")
 screen.title("SNAKE GAME")
 screen.tracer(0)
@@ -17,9 +17,9 @@ score.update_scoreboard()
 
 screen.listen()
 screen.onkey(snake.up, "Up")
-screen.onkey(snake.down,"Down")
-screen.onkey(snake.left,"Left")
-screen.onkey(snake.right,"Right")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
 
 game_is_on = True
 while game_is_on:
@@ -40,13 +40,5 @@ while game_is_on:
         if snake.head.distance(segment) < 10:
             score.reset()
             snake.reset()
-
-
-
-
-
-
-
-
 
 screen.exitonclick()
