@@ -1,6 +1,5 @@
 import turtle
 import pandas as pd
-import time
 
 screen = turtle.Screen()
 screen.title("U.S. States Game")
@@ -20,7 +19,6 @@ while len(correct_a) < 50:
                 not_found_states.append(x)
         new_csv = pd.DataFrame(not_found_states)
         new_csv.to_csv("States_to_learn.csv")
-
         break
 
     t1 = turtle.Turtle()
