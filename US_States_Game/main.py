@@ -13,10 +13,11 @@ correct_a = []
 while len(correct_a) < 50:
     answer = screen.textinput(title=f"Guess the state {len(correct_a)}/50", prompt="Try finding a state").title()
     if answer == "Exit":
-        not_found_states = []
-        for x in all_states:
-            if x not in correct_a:
-                not_found_states.append(x)
+        not_found_states = [x for x in all_states if x not in correct_a]
+        # not_found_states = []
+        # for x in all_states:
+        #     if x not in correct_a:
+        #         not_found_states.append(x)
         new_csv = pd.DataFrame(not_found_states)
         new_csv.to_csv("States_to_learn.csv")
         break
