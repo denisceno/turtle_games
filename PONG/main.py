@@ -5,7 +5,7 @@ import time
 from scoreboard import Scoreboard
 
 screen = Screen()
-screen.setup(800,600)
+screen.setup(800, 600)
 screen.bgcolor("black")
 screen.title("PONG")
 paddle = Turtle()
@@ -15,7 +15,6 @@ r_paddle = Paddle((350, 0))
 l_paddle = Paddle((-350, 0))
 ball = Ball()
 scoreboard = Scoreboard()
-
 
 screen.listen()
 screen.onkey(r_paddle.go_up, "Up")
@@ -42,13 +41,5 @@ while game_is_on:
         ball.reset_position()
         ball.moove_speed = 0.1
         scoreboard.r_point()
-
-
-
-
-
-
-
-
 
 screen.exitonclick()

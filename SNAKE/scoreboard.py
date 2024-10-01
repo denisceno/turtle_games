@@ -1,5 +1,6 @@
 from turtle import Turtle
 
+
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
@@ -9,7 +10,6 @@ class Scoreboard(Turtle):
         self.goto(0, 270)
         self.color("white")
         self.hideturtle()
-
 
     def update_scoreboard(self):
         self.clear()
@@ -23,7 +23,7 @@ class Scoreboard(Turtle):
         self.score = 0
         self.update_scoreboard()
 
-    def incrise_score(self):
+    def increase_score(self):
         self.clear()
         self.score += 1
         self.write(f"Score: {self.score} High Score: {self.high_score}", align="center", font=("Arial", 24, "normal"))
@@ -31,5 +31,3 @@ class Scoreboard(Turtle):
     def high_score(self):
         with open("snake_data.txt", "r") as file:
             return file.read()
-
-
