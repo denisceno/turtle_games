@@ -1,12 +1,14 @@
 import turtle
 import pandas as pd
+import os
 
+base_path = os.path.dirname(__file__)
 screen = turtle.Screen()
 screen.title("U.S. States Game")
-image = "blank_states_img.gif"
+image = os.path.join(base_path, "blank_states_img.gif")
 screen.addshape(image)
 turtle.shape(image)
-data = pd.read_csv("50_states.csv")
+data = pd.read_csv(os.path.join(base_path, "50_states.csv"))
 all_states = data['state'].to_list()
 
 correct_a = []
@@ -15,7 +17,7 @@ while len(correct_a) < 50:
     if answer == "Exit":
         not_found_states = [x for x in all_states if x not in correct_a]
         new_csv = pd.DataFrame(not_found_states)
-        new_csv.to_csv("States_to_learn.csv")
+        new_csv.to_csv(pd.read_csv(os.path.join(base_path, "50_states.csv")))
         break
 
     t1 = turtle.Turtle()
